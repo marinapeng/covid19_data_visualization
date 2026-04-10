@@ -3,8 +3,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>
-   The Body Under Siege — COVID-19 Clinical Trajectory
-  </title>
+   The Body Under Siege: Tracking the Path from COVID-19 Diagnosis to Recovery or Death
+</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;family=DM+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
@@ -16,69 +16,26 @@
 <div class="header">
 <div class="header-inner">
 <h1>
-     The Body
+     The Body Under Siege
      <br/>
-<em>
-      Under Siege
-     </em>
 </h1>
+<h2>
+      Tracking the Path from COVID-19 Diagnosis to Recovery or Death
+</h2>
 <p class="header-sub">
-     Day-by-day, the body's vital signs reveal two completely different stories — one of recovery, one of collapse. This is what COVID-19 looks like from the inside, traced through 9,106 patients.
+     Day by day, the body showed two very different patterns: one led to recovery,
+     and one led to death. This dashboard showed what COVID-19 looked like inside the body across
+     8,820 patients.
     </p>
 </div>
 </div>
 <div class="main">
-<div class="kpi-strip" id="kpi-strip">
-<div class="kpi">
-<div class="kpi-label">
-      COVID Patients
-     </div>
-<div class="kpi-value">
-      9,106
-     </div>
-<div class="kpi-sub">
-      Massachusetts 2020
-     </div>
-</div>
-<div class="kpi">
-<div class="kpi-label">
-      Fatality Rate
-     </div>
-<div class="kpi-value">
-      3.9%
-     </div>
-<div class="kpi-sub">
-      Case fatality rate
-     </div>
-</div>
-<div class="kpi">
-<div class="kpi-label">
-      Deaths
-     </div>
-<div class="kpi-value">
-      357
-     </div>
-<div class="kpi-sub">
-      of 8,749 survived
-     </div>
-</div>
-<div class="kpi">
-<div class="kpi-label">
-      Median Days to Death
-     </div>
-<div class="kpi-value">
-      12
-     </div>
-<div class="kpi-sub">
-      From diagnosis
-     </div>
-</div>
-</div>
+<div class="kpi-strip" id="kpi-strip"></div>
 <div class="tabs">
-<button class="tab" data-tab="story">
+<button class="tab active" data-tab="story">
      Story
     </button>
-<button class="tab active" data-tab="vitals">
+<button class="tab" data-tab="vitals">
      Vital Trajectories
     </button>
 <button class="tab" data-tab="cascade">
@@ -92,32 +49,26 @@
     </button>
 </div>
 <!-- STORY -->
-<div class="panel" id="tab-story">
+<div class="panel active" id="tab-story">
 <div class="content-wrap">
 <div class="content-intro">
 <h2 class="page-title">
-       What does COVID-19 actually look like
-       <br/>
-       from inside the body?
+       What does COVID-19 actually look like from inside the body?
       </h2>
 <p class="body-copy mb-14">
-       Most COVID-19 data tells you
-       <em class="em-strong">
-        who
-       </em>
-       died — older patients, those with comorbidities, certain zip codes. This dashboard asks a different question:
-       <em class="em-muted">
-        how
-       </em>
-       did they die, and what physiological signals separated those who recovered from those who didn't?
+       Most COVID-19 data visualizations focus on who died, such as older people, patients with other health problems,
+       or people from certain areas. This dashboard looked instead at how patients got worse. 
+       What changed inside the body? Which warning signs separated the people who recovered from the people who did not?
+
       </p>
 <p class="body-copy">
-       Using clinical records from 9,106 COVID-19 patients in Massachusetts (January–April 2020), we trace the disease's path through the body — day by day, complication by complication — to build a complete picture of COVID-19's progression from first diagnosis to death or recovery.
+       Using clinical records from 8,820 COVID-19 patients in Massachusetts from January to April 2020,
+       we tracked how the disease progressed over time, from diagnosis to either recovery or death.
       </p>
 </div>
 <div class="section-divider">
 </div>
-<!-- Act 1 -->
+<!-- Tab 1 -->
 <div class="story-block">
 <div>
 <div class="story-block-head">
@@ -126,7 +77,14 @@
         </span>
 </div>
 <p class="story-block-copy">
-        From the moment of diagnosis, two paths emerge. We track four clinical signals — body temperature, heart rate, respiratory rate, and lymphocyte count — day by day for 21 days. By day 7, survivors are visibly recovering. Non-survivors are not. The story is the divergence: the fever that never breaks, the heart that won't slow down, the lungs that keep working harder, and the immune cells that were already depleted before the first symptom appeared. A vertical marker shows the median day of death (day 12), anchoring the biological story in time.
+        From the start of diagnosis, patients began to follow two different paths.
+        We tracked four key signals over 21 days: body temperature, heart rate, respiratory rate,
+        and lymphocyte count. By around day 10, the difference became clear. 
+        Survivors started to improve. Non-survivors did not. 
+        Their fevers lasted longer, their heart rates stayed higher, 
+        their breathing remained more strained, and 
+        their immune cell counts were already lower early on. 
+        A vertical line is used on the graphs as a visual marker of the median day of death, day 12.
        </p>
 </div>
 </div>
@@ -139,7 +97,15 @@
         </span>
 </div>
 <p class="story-block-copy">
-        COVID-19 doesn't kill randomly — it follows a predictable sequence of escalating complications. Act 2 maps that cascade: cough and fever give way to pneumonia and hypoxemia, which lead to respiratory failure, then sepsis, then ARDS, then septic shock. The key insight is in the branching points: pneumonia appeared in nearly all fatal and non-fatal cases — it is common and survivable. Sepsis appeared in 97% of deaths but only 4% of survivors. ARDS appeared in 63% of deaths and essentially 0% of survivors. These are the thresholds that separate recovery from death. A histogram of days-to-death shows the second week (days 7–14) is when most deaths occur — connecting directly back to the vital sign divergence in Act 1.
+        COVID-19 followed a clear pattern as it became more severe.
+        Early symptoms like cough and fever could progress to pneumonia and low oxygen levels,
+        then to respiratory failure, sepsis, ARDS, and septic shock.
+        The important point was that some complications, like cough and fever,
+        were common and survivable, while others strongly signaled danger.
+        For instance, sepsis appeared in 97% of deaths but only 4% of survivors.
+        ARDS appeared in 63% of deaths and rarely in survivors.
+        A histogram of days to death showed that most deaths happened in the second week,
+        between days 7 and 14.
        </p>
 </div>
 </div>
@@ -152,21 +118,31 @@
         </span>
 </div>
 <p class="story-block-copy">
-        Zooming out from the individual body to the population level, Act 3 shows that COVID-19 is a bifurcated disease. 78% of patients managed it entirely as outpatients with near-zero mortality. But once the body could no longer manage the disease at home — once it crossed into emergency or inpatient care — mortality jumped sharply. The disease does not exist on a spectrum; there is a cliff. Two charts compare patient volume across care settings and the corresponding mortality rate, revealing exactly where that cliff is.
+        Zooming out from the individual body to the population level,
+        the third tab shows that COVID-19 is a bifurcated disease.
+        78% of patients managed it entirely as outpatients with near-zero mortality.
+        But once the body could no longer manage the disease at home and went to
+        emergency or inpatient care, mortality jumped sharply.
+        The disease does not exist on a spectrum; there is a cliff.
+        This dashboard showed where that change happened by comparing
+        how many patients were treated in each care setting and the death rate in each one.
        </p>
 </div>
 </div>
 </div>
 </div>
 <!-- VITALS -->
-<div class="panel active" id="tab-vitals">
+<div class="panel" id="tab-vitals">
 <div class="section-hdr">
 <div>
 <h3>
        The divergence begins on day one
       </h3>
 <p>
-       When you track vital signs day-by-day, two paths emerge from the same starting point. By day 7, survivors are recovering. Non-survivors are not. The lines never cross back.
+       When vital signs were tracked day by day,
+       survivors and non-survivors followed different paths from the very start.
+       By around day 10, survivors showed clear signs of recovery,
+       while non-survivors continued to worsen. The gap only grew over time.
       </p>
 </div>
 </div>
@@ -175,10 +151,10 @@
 <div class="card-title">
 <span class="cdot cdot-teal">
 </span>
-       Body Temperature (°C)
+       Daily Average Body Temperature (°C) in COVID-19 Survivors vs Non-Survivors
       </div>
 <div class="card-sub">
-       Daily mean — the fever break that separates survivors from non-survivors
+       Daily mean temperature showed when recovery began and when it did not
       </div>
 <div class="legend-row">
 <div class="legend-item">
@@ -195,20 +171,17 @@
 <div class="js-plotly-plot chart-300" id="v-temp">
 </div>
 <div class="note gold">
-<strong>
-        The fever break that never comes.
-       </strong>
-       Survivors' temperatures return toward normal by day 14. Non-survivors stay febrile — temperatures actually climb again by day 18–19 as secondary infection sets in.
+       Among survivors, fever eased over time and approached normal levels by day 14. Among non-survivors, fever lasted longer and rose again near days 18 to 19, pointing to ongoing deterioration in health.
       </div>
 </div>
 <div class="card">
 <div class="card-title">
 <span class="cdot cdot-teal">
 </span>
-       Heart Rate (bpm)
+       Daily Average Heart Rate (bpm) in COVID-19 Survivors vs Non-Survivors
       </div>
 <div class="card-sub">
-       Tachycardia as a marker of physiologic stress
+       Daily mean heart rate showed when the body was stabilizing and when it remained under stress
       </div>
 <div class="legend-row">
 <div class="legend-item">
@@ -225,10 +198,9 @@
 <div class="js-plotly-plot chart-300" id="v-hr">
 </div>
 <div class="note rust">
-<strong>
-        Heart rate tells the story after day 14.
-       </strong>
-       Both groups start tachycardic (~125 bpm). Survivors' hearts slow steadily to ~97 bpm by day 20. Non-survivors spike above 130 bpm — cardiovascular decompensation in real time.
+        Among both groups, heart rate started out elevated. Over time, survivors’ heart rates gradually slowed, while non-survivors'
+        heart rates remained high and increased again after day 14,
+        pointing to continued physical stress and worsening condition.
       </div>
 </div>
 </div>
@@ -237,10 +209,10 @@
 <div class="card-title">
 <span class="cdot cdot-teal">
 </span>
-       Respiratory Rate (breaths/min)
+       Average Respiratory Rate (breaths/min) in COVID-19 Survivors vs Non-Survivors
       </div>
 <div class="card-sub">
-       The lungs' distress signal, day by day
+       Daily mean breathing rate showed whether the lungs were recovering or failing
       </div>
 <div class="legend-row">
 <div class="legend-item">
@@ -257,20 +229,20 @@
 <div class="js-plotly-plot chart-300" id="v-rr">
 </div>
 <div class="note">
-<strong>
-        By day 20, non-survivors breathe 30 times per minute
-       </strong>
-       vs. 18–19 for survivors. This 12-breath gap represents the difference between lungs that are healing and lungs that are failing.
+        Among survivors, breathing rate gradually improved over time and moved closer
+        to normal levels. Among non-survivors, breathing remained fast and became even
+        more elevated by day 20, pointing to worsening lung function and increasing
+        respiratory distress.
       </div>
 </div>
 <div class="card">
 <div class="card-title">
 <span class="cdot cdot-teal">
 </span>
-       Lymphocyte Count (×10³/µL)
+       Average Lymphocyte Count (×10³/µL) in COVID-19 Survivors vs Non-Survivors
       </div>
 <div class="card-sub">
-       Lymphopenia — the immune system being consumed
+       Daily mean lymphocyte count showed the strength of the body’s immune response over time
       </div>
 <div class="legend-row">
 <div class="legend-item">
@@ -287,10 +259,11 @@
 <div class="js-plotly-plot chart-300" id="v-lymph">
 </div>
 <div class="note">
-<strong>
-        Non-survivors start with half the lymphocytes — on day 0.
-       </strong>
-       Survivors average 1.05 ×10³/µL; non-survivors 0.60 — already 43% lower before any treatment begins. This immune deficit persists and deepens throughout the illness.
+        Lymphocytes are white blood cells that help the body fight infection.
+        Among survivors, lymphocyte levels were higher at the start and improved
+        gradually over time. Among non-survivors, lymphocyte levels were lower
+        from day 0 and stayed low throughout the illness, pointing to a weaker
+        immune response and reduced ability to fight the virus.
       </div>
 </div>
 </div>
@@ -300,10 +273,12 @@
 <div class="section-hdr">
 <div>
 <h3>
-       A predictable descent — one complication at a time
+       A predictable descent from one complication at a time
       </h3>
 <p>
-       COVID-19 follows a cascade: fever and cough → pneumonia → respiratory failure → sepsis → ARDS → shock → death. Almost every patient who died passed through each stage in order.
+       COVID-19 often worsened in a step-by-step sequence: fever and cough led to pneumonia,
+       then respiratory failure, sepsis, ARDS, shock, and death.
+       Most patients who died moved through these stages in roughly that order.
       </p>
 </div>
 </div>
@@ -315,15 +290,13 @@
        Fatal Cases — Complication Rates
       </div>
 <div class="card-sub">
-       % of the 357 deaths that developed each complication
+       % of the <span id="cascade-deaths"></span> deaths that developed each complication
       </div>
 <div class="chart-360" id="chart-fatal">
 </div>
 <div class="note rust">
-<strong>
-        Sepsis in 97% of deaths. ARDS in 63%.
-       </strong>
-       Once these complications appear, the pathway to death is nearly certain.
+        Severe complications were concentrated in fatal cases,
+        especially sepsis, respiratory failure, and ARDS. 
       </div>
 </div>
 <div class="card">
@@ -333,15 +306,13 @@
        Survivors — Complication Rates
       </div>
 <div class="card-sub">
-       % of the 8,749 survivors that developed each complication
+       % of the <span id="cascade-survivors"></span> survivors that developed each complication
       </div>
 <div class="chart-360" id="chart-surv">
 </div>
 <div class="note">
-<strong>
-        Survivors rarely reached sepsis or ARDS.
-       </strong>
-       Most experienced only early-stage complications — fever, cough, and pneumonia — before recovering.
+        Survivors usually experienced early-stage complications like fever and cough,
+        but rarely progressed to sepsis, ARDS, or shock.
       </div>
 </div>
 </div>
@@ -358,9 +329,9 @@
 </div>
 <div class="note">
 <strong>
-       Median 12 days from diagnosis to death.
+       Median <span id="median-days"></span> days from diagnosis to death.
       </strong>
-      The second week (days 7–14) is the deadliest window — 180 of 357 deaths. Very few patients survive beyond 30 days once they reach critical status.
+      The second week (days 7–14) is the deadliest window: <span id="peak-window-deaths"></span> of <span id="cascade-deaths-2"></span> deaths. Very few patients survive beyond 30 days once they reach critical status.
      </div>
 </div>
 <div class="card-full">
@@ -376,9 +347,9 @@
 </div>
 <div class="note green">
 <strong>
-       The death peak lags the case peak by ~2 weeks
+       The death peak lags the case peak by ~2 weeks:
       </strong>
-      — precisely the median 12-day survival window. The virus has a predictable clock.
+       precisely the median <span id="median-days-hyphen"></span>-day survival window. The virus has a predictable clock.
      </div>
 </div>
 </div>
@@ -387,10 +358,15 @@
 <div class="section-hdr">
 <div>
 <h3>
-       Mild for most — catastrophic for those hospitalized
+      COVID-19 was mild for most, but far more dangerous once hospitalization was needed
       </h3>
 <p>
-       78% of COVID patients managed outpatient had near-zero mortality. Of those hospitalized, 12.8% died. The disease is bifurcated: mostly mild, but lethal once it escalates past the outpatient threshold.
+      Most patients experienced COVID-19 as an outpatient illness with near-zero mortality.
+      In this dataset,  <span id="severity-outpatient-pct-2"></span> never needed hospital care.
+      But for patients sick enough to be hospitalized, outcomes changed 
+      dramatically: <span id="severity-hospital-mortality"></span> died.
+      The disease followed two very different paths, remaining manageable for most but becoming 
+      much more lethal once it crossed the threshold into hospital-level care.
       </p>
 </div>
 </div>
@@ -420,7 +396,7 @@
 </div>
 <div class="note rust">
 <strong>
-        Hospitalized: 12.8% mortality.
+        Hospitalized: <span id="severity-hospital-mortality-2"></span> mortality.
        </strong>
        ER and urgent care: near-zero. Crossing the threshold into inpatient care — meaning the body could not manage the disease at home — dramatically changes the outcome.
       </div>
@@ -437,9 +413,6 @@
 <h2 class="page-title">
        Team Contribution
       </h2>
-<p class="body-copy">
-       Document your team members and their contributions to this project below.
-      </p>
 </div>
 <div class="section-divider">
 </div>

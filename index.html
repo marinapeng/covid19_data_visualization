@@ -273,12 +273,11 @@
 <div class="section-hdr">
 <div>
 <h3>
-       A predictable descent from one complication at a time
+       Complication patterns differed sharply between survivors and fatal cases
       </h3>
 <p>
-       COVID-19 often worsened in a step-by-step sequence: fever and cough led to pneumonia,
-       then respiratory failure, sepsis, ARDS, shock, and death.
-       Most patients who died moved through these stages in roughly that order.
+      Severe complications were far more common among patients who died, while survivors were concentrated in earlier and less critical complications.
+      Common symptoms (like fever and cough) appeared in both groups, but severe complications (acute respiratory failure, sepsis, ARDS) were concentrated in fatal cases.
       </p>
 </div>
 </div>
@@ -296,7 +295,7 @@
 </div>
 <div class="note rust">
         Severe complications were concentrated in fatal cases,
-        especially sepsis, respiratory failure, and ARDS. 
+        especially sepsis, acute respiratory failure, and ARDS. 
       </div>
 </div>
 <div class="card">
@@ -355,54 +354,80 @@
 </div>
 <!-- SEVERITY -->
 <div class="panel" id="tab-severity">
-<div class="section-hdr">
-<div>
-<h3>
-      COVID-19 was mild for most, but far more dangerous once hospitalization was needed
+  <div class="section-hdr">
+    <div>
+      <h3>
+        COVID-19 was mild for most, but far more dangerous once hospitalization was needed
       </h3>
-<p>
-      Most patients experienced COVID-19 as an outpatient illness with near-zero mortality.
-      In this dataset,  <span id="severity-outpatient-pct-2"></span> never needed hospital care.
-      But for patients sick enough to be hospitalized, outcomes changed 
-      dramatically: <span id="severity-hospital-mortality"></span> died.
-      The disease followed two very different paths, remaining manageable for most but becoming 
-      much more lethal once it crossed the threshold into hospital-level care.
+      <p>
+        Most patients experienced COVID-19 as an outpatient illness with near-zero mortality.
+        In this dataset, <span id="severity-outpatient-pct-2"></span> never needed hospital care.
+        But for patients sick enough to be hospitalized, outcomes changed
+        dramatically: <span id="severity-hospital-mortality"></span> died.
+        The disease followed two very different paths, remaining manageable for most but becoming
+        much more lethal once it crossed the threshold into hospital-level care.
       </p>
-</div>
-</div>
-<div class="g2">
-<div class="card">
-<div class="card-title">
-<span class="cdot cdot-teal">
-</span>
-       Patient Volume by Care Setting
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">
+        <span class="cdot cdot-teal"></span>
+        Patient Volume by Care Setting
       </div>
-<div class="card-sub">
-       Where COVID patients ended up seeking care
+      <div class="card-sub">
+        Where COVID patients ended up seeking care
       </div>
-<div class="chart-300" id="chart-sev-vol">
-</div>
-</div>
-<div class="card">
-<div class="card-title">
-<span class="cdot cdot-rust">
-</span>
-       Mortality by Care Setting
+      <div class="chart-300" id="chart-sev-vol"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span class="cdot cdot-rust"></span>
+        Mortality by Care Setting
       </div>
-<div class="card-sub">
-       The cliff between outpatient and hospitalized
+      <div class="card-sub">
+        The cliff between outpatient and hospitalized
       </div>
-<div class="chart-300" id="chart-sev-mort">
-</div>
-<div class="note rust">
-<strong>
-        Hospitalized: <span id="severity-hospital-mortality-2"></span> mortality.
-       </strong>
-       ER and urgent care: near-zero. Crossing the threshold into inpatient care — meaning the body could not manage the disease at home — dramatically changes the outcome.
+      <div class="chart-300" id="chart-sev-mort"></div>
+      <div class="note rust">
+        Hospitalized patients faced an 18.7% mortality rate, while mortality in outpatient care remained near zero. Once COVID-19 required inpatient care, the risk of death rose sharply.
       </div>
+    </div>
+  </div>
+
+  <div class="g2">
+  <div class="card">
+    <div class="card-title">
+      <span class="cdot cdot-rust"></span>
+      Mortality by Number of Unique Medications
+    </div>
+    <div class="card-sub">
+      Mortality rate by count of unique medications prescribed after COVID-19 diagnosis
+    </div>
+    <div class="chart-320" id="chart-med-mort"></div>
+    <div class="note rust">
+      Patients prescribed more unique medications had higher mortality rates, though this likely reflects greater illness severity rather than a direct effect of the medications themselves.
+    </div>
+  </div>
+
+   <div class="card">
+    <div class="card-title">
+      <span class="cdot cdot-teal"></span>
+      Most Common Medications Among Patients Who Died
+    </div>
+    <div class="card-sub">
+      Top 10 medications by number of deceased patients who received them after diagnosis
+    </div>
+    <div class="chart-360" id="chart-top-meds"></div>
+    <div class="note">
+      The most common medications reflect the complications of severe COVID: fever and pain control, blood clot prevention, treatment for secondary infection, support for respiratory distress, and vasopressors for shock.
+    </div>
+  </div>
 </div>
 </div>
-</div>
+
 <!-- TEAM -->
 <div class="panel" id="tab-team">
 <div class="content-wrap">

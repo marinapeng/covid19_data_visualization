@@ -17,7 +17,7 @@ export function renderKPIs(D) {
     {
       label: "Deaths",
       value: k.died.toLocaleString(),
-      sub: `of ${k.survived.toLocaleString()} survived`
+      sub: `vs ${k.survived.toLocaleString()} survived`
     },
     {
       label: "Median Days to Death",
@@ -394,7 +394,9 @@ export function renderCascade(D) {
 }
 
 export function renderSeverity(D) {
-  const severityGroups = D.severity_groups;
+  const severityGroups = D.severity_groups.filter(
+    (item) => !item.SEVERITY.toLowerCase().includes("moderate")
+  );
 
   Plotly.newPlot(
     "chart-sev-vol",
@@ -463,6 +465,88 @@ export function renderSeverity(D) {
         b: 84,
         l: 60,
         r: 18
+      }
+    }),
+    CFG
+  );
+
+  const medMort = D.medication_mortality ?? [];
+  const topMeds = [...(D.top_medications_died ?? [])].sort(
+    (a, b) => a.patient_count - b.patient_count
+  );
+
+  Plotly.newPlot(
+    "chart-med-mort",
+    [
+      {
+        type: "bar",
+        x: medMort.map((item) => item.unique_med_count),
+        y: medMort.map((item) => item.mortality_rate),
+        marker: { color: "#e0694a" },
+        text: medMort.map((item) => `${item.mortality_rate}%`),
+        textposition: "outside",
+        cliponaxis: false,
+        textfont: { size: 11, color: "#eaebef" },
+        hovertemplate:
+          "<b>%{x} unique medications</b><br>Mortality: %{y}%<br>n=%{customdata:,} patients<extra></extra>",
+        customdata: medMort.map((item) => item.total_patients)
+      }
+    ],
+    buildLayout({
+      yaxis: {
+        title: { text: "Mortality rate (%)", font: { size: 11 } },
+        ticksuffix: "%",
+        autorange: true,
+        rangemode: "tozero"
+      },
+      xaxis: {
+        title: { text: "Number of unique medications", font: { size: 11 } },
+        tickfont: { size: 11 },
+        dtick: 1
+      },
+      margin: {
+        t: 20,
+        b: 60,
+        l: 60,
+        r: 20
+      }
+    }),
+    CFG
+  );
+
+  Plotly.newPlot(
+    "chart-top-meds",
+    [
+      {
+        type: "bar",
+        orientation: "h",
+        x: topMeds.map((item) => item.patient_count),
+        y: topMeds.map((item) => item.DESCRIPTION),
+        marker: { color: "#26c0d3" },
+        text: topMeds.map((item) => `${item.patient_count}`),
+        textposition: "outside",
+        cliponaxis: false,
+        textfont: { size: 11, color: "#eaebef" },
+        hovertemplate:
+          "<b>%{y}</b><br>%{x} deceased patients<br>%{customdata}% of deaths<extra></extra>",
+        customdata: topMeds.map((item) => item.pct_of_deaths)
+      }
+    ],
+    buildLayout({
+      xaxis: {
+        title: { text: "Deceased patients receiving medication", font: { size: 11 } },
+        tickfont: { size: 11 },
+        rangemode: "tozero"
+      },
+      yaxis: {
+        tickfont: { size: 11 },
+        automargin: true
+      },
+      margin: {
+        t: 20,
+        b: 48,
+        l: 260,
+        r: 40
       }
     }),
     CFG

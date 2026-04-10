@@ -51,7 +51,7 @@ export function renderTeam() {
       name: "Marina Peng",
       role: "",
       detail:
-        "Worked on the analytical framing and written narrative of the project. Contributed to identifying the most important patterns in the data, deciding which comparisons to emphasize, and writing and revising the explanatory text across the dashboard. Also contributed to the Python data preparation process, attended office hours for feedback on the project’s direction, and helped connect the data analysis to the overall story being presented."
+        "Led the analytical framing and written narrative of the project. Contributed to identifying the most important patterns in the data, deciding which comparisons to emphasize, and writing and revising the explanatory text across the dashboard. Contributed and built the Python data preparation process, attended office hours for feedback on the project’s direction, and helped connect the data analysis to the overall story being presented."
     }
   ];
 

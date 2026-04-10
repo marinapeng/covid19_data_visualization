@@ -470,7 +470,9 @@ export function renderSeverity(D) {
     CFG
   );
 
-  const medMort = D.medication_mortality ?? [];
+  const medMort = (D.medication_mortality ?? []).filter(
+  (item) => item.unique_med_count <= 11
+);
   const topMeds = [...(D.top_medications_died ?? [])].sort(
     (a, b) => a.patient_count - b.patient_count
   );
